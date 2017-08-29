@@ -1,12 +1,12 @@
 {
-  "name": "cordova-plugin-template",
+  "name": "cordova-app-opener",
   "version": "1.0.0",
   "cordova": {
-    "id": "cordova-plugin-template",
+    "id": "cordova-app-opener",
     "platforms": [
       "android",
       "ios",
     ]
   },
-  "description": "A starting point for a Cordova Plugin"
+  "description": "A plugin to open 3rd party apps like phone, mail client, sms app etc"
 }
