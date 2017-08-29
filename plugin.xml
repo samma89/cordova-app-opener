@@ -18,7 +18,7 @@
       </js-module>
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="AppOpener">
-          <param name="android-package" value="com.example.AppOpener" />
+          <param name="android-package" value="com.crowderia.plugins.AppOpener" />
           <param name="onload" value="true" />
         </feature>
       </config-file>
