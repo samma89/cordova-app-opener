@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-app-opener"
+    version="1.0.0">
+    <name>Cordova App Opener</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo>https://github.com/driftyco/cordova-plugin-template.git</repo>
+    <issue>https://github.com/driftyco/cordova-plugin-template/issues</issue>
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/AppOpener.js" name="AppOpener">
+        <runs/>
+        <clobbers target="AppOpener" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="AppOpener">
+          <param name="android-package" value="com.example.AppOpener" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/com/example/AppOpener.java" target-dir="src/com/example/" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/AppOpener.js" name="AppOpener">
+            <runs/>
+            <clobbers target="AppOpener" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="AppOpener">
+                <param name="ios-package" value="AppOpener" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/AppOpener.h" />
+        <source-file src="src/ios/AppOpener.m" />
+    </platform>
+</plugin>
