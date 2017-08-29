@@ -9,6 +9,9 @@ var AppOpener = {
   },
   getDate: function(cb) {
     exec(cb, null, PLUGIN_NAME, 'getDate', []);
+  },
+  openChooser: function(cb, type, data){
+  	exec(cb, null, PLUGIN_NAME, type, [data]);
   }
 };
 

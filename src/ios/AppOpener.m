@@ -25,4 +25,18 @@
   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
+- (void)phone:(CDVInvokedUrlCommand *)command {
+  NSString* to = [command.arguments objectAtIndex:0];
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",to]]];
+  CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+- (void)email:(CDVInvokedUrlCommand *)command {
+  NSString* to = [command.arguments objectAtIndex:0];
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"mailto:%@",to]]];
+  CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
 @end

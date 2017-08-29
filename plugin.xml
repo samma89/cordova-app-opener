@@ -23,7 +23,7 @@
         </feature>
       </config-file>
 
-      <source-file src="src/android/com/example/AppOpener.java" target-dir="src/com/example/" />
+      <source-file src="src/android/com/crowderia/AppOpener.java" target-dir="src/com/crowderia/plugins/" />
     </platform>
 
     <!-- ios -->

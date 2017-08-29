@@ -34,6 +34,19 @@ public class AppOpener extends CordovaPlugin {
       // An example of returning data back to the web layer
       final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
       callbackContext.sendPluginResult(result);
+    }else if(action.equals("email")){
+      Intent it = new Intent(Intent.ACTION_SEND);
+      it.setType("message/rfc822");
+      it.putExtra(Intent.EXTRA_EMAIL, args.getString(0));
+      final PluginResult result = new PluginResult(PluginResult.Status.OK, null);
+      callbackContext.sendPluginResult(result);
+      this.cordova.getActivity().startActivity(Intent.createChooser(it, "Send an email..."));
+    }else if(action.equals("phone")){
+      Intent it = new Intent(Intent.ACTION_DIAL);
+      it.setData(Uri.parse("tel:"+args.getString(0)));
+      final PluginResult result = new PluginResult(PluginResult.Status.OK, null);
+      callbackContext.sendPluginResult(result);
+      this.cordova.getActivity().startActivity(it);
     }
     return true;
   }
